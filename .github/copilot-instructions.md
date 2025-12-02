@@ -29,7 +29,9 @@ src/
 ├── components/
 │   ├── ui/                      # Base UI components (shadcn/ui style)
 │   ├── layout/                  # Header, sidebar, footer
-│   └── features/                # Feature-specific components
+│   ├── products/                # Product feature components
+│   ├── users/                   # User feature components (future)
+│   └── [feature]/               # Each feature has its own folder
 ├── lib/
 │   ├── api/                     # API client for NestJS backend
 │   ├── utils.ts                 # Utility functions (cn, etc.)
