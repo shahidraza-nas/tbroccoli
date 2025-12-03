@@ -21,7 +21,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
     const category = categoryResult.data;
     const productsResult = await getProducts({ 
-        categoryId: category.id, 
+        // categoryId: category.id, 
         limit: 12, 
         page: 1,
         sortBy: "createdAt",

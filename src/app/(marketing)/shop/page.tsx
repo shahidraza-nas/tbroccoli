@@ -1,8 +1,6 @@
 import { getProducts } from "@/actions/product.action";
 import { ShopHeader } from "./(components)/ShopHeader";
-import { FilterBar } from "./(components)/FilterBar";
-import { ProductGrid } from "./(components)/ProductGrid";
-import { Pagination } from "./(components)/Pagination";
+import { ShopClient } from "./(components)/ShopClient";
 
 export default async function ShopPage() {
     const productsResult = await getProducts({ 
@@ -19,11 +17,9 @@ export default async function ShopPage() {
         <div className="min-h-screen bg-white">
             <ShopHeader title="Fashion" breadcrumb="Home" />
 
-            <section className="py-12">
+            <section className="py-16">
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <FilterBar />
-                    <ProductGrid products={products} />
-                    <Pagination currentPage={1} totalPages={totalPages || 4} />
+                    <ShopClient products={products} totalPages={totalPages || 4} />
                 </div>
             </section>
         </div>

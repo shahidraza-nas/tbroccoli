@@ -14,7 +14,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
     };
 
     return (
-        <div className="mt-12 flex justify-center">
+        <div className="mt-16 flex justify-center">
             <div className="flex gap-2">
                 {[...Array(Math.min(totalPages, 4))].map((_, i) => {
                     const pageNum = i + 1;
@@ -24,10 +24,10 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                         <button
                             key={pageNum}
                             onClick={() => handlePageChange(pageNum)}
-                            className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                            className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all ${
                                 isActive
-                                    ? "bg-[#FF6B6B] text-white"
-                                    : "border border-gray-300 text-gray-700 hover:border-black hover:text-black"
+                                    ? "bg-[#FF6B6B] text-white shadow-md"
+                                    : "text-gray-700 hover:text-[#FF6B6B]"
                             }`}
                         >
                             {pageNum}
@@ -36,13 +36,15 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
                 })}
                 
                 {totalPages > 4 && (
-                    <button
-                        onClick={() => handlePageChange(currentPage + 1)}
-                        disabled={currentPage >= totalPages}
-                        className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:border-black hover:text-black disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        →
-                    </button>
+                    <>
+                        <button
+                            onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
+                            disabled={currentPage >= totalPages}
+                            className="flex h-10 w-10 items-center justify-center rounded-full text-gray-700 hover:text-[#FF6B6B] disabled:cursor-not-allowed disabled:opacity-30"
+                        >
+                            →
+                        </button>
+                    </>
                 )}
             </div>
         </div>

@@ -2,9 +2,10 @@ import { ShopProductCard } from "@/components/products/ShopProductCard";
 
 interface ProductGridProps {
     products: any[];
+    gridCols?: number;
 }
 
-export function ProductGrid({ products }: ProductGridProps) {
+export function ProductGrid({ products, gridCols = 3 }: ProductGridProps) {
     // Sample products for now - will be replaced with actual products
     const sampleProducts = [
         {
@@ -93,8 +94,16 @@ export function ProductGrid({ products }: ProductGridProps) {
         },
     ];
 
+    const gridClass = {
+        2: "grid-cols-1 md:grid-cols-2",
+        3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+        4: "grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
+        5: "grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
+        6: "grid-cols-2 md:grid-cols-4 lg:grid-cols-6",
+    }[gridCols] || "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
+
     return (
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className={`grid gap-8 ${gridClass}`}>
             {sampleProducts.map((product) => (
                 <ShopProductCard key={product.id} {...product} />
             ))}
