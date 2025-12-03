@@ -9,7 +9,12 @@ export function Footer() {
                 <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                     {/* Logo & Contact */}
                     <div>
-                        <h3 className="mb-4 text-2xl font-bold">TBroccoli.</h3>
+                        {/* <h3 className="mb-4 text-2xl font-bold">TBroccoli.</h3> */}
+                        <div className="flex items-center">
+                            <Link href="/" className="flex items-baseline text-2xl font-bold tracking-tight text-black">
+                                TBroccoli<span className="ml-0.5 text-[#FF6B6B]">.</span>
+                            </Link>
+                        </div>
                         <div className="space-y-1 text-sm text-gray-600">
                             <p>Calista Wise 7292 Dictum Av. Antonio,</p>
                             <p>Italy.</p>
