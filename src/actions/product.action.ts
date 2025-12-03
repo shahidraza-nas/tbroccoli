@@ -90,7 +90,7 @@ const mockProducts: Product[] = [
  * Get list of products with filtering and pagination
  */
 export async function getProducts(
-  filter?: ProductFilter
+  filter?: Partial<ProductFilter>
 ): Promise<ActionResponse<{ products: Product[]; total: number; page: number; limit: number }>> {
   try {
     // Simulate network delay
