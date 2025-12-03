@@ -9,11 +9,13 @@ import { MegaMenuDemo } from "./MegaMenuDemo";
 import { MegaMenuShop } from "./MegaMenuShop";
 import { MegaMenuProduct } from "./MegaMenuProduct";
 import { MegaMenuElements } from "./MegaMenuElements";
+import { useWishlist } from "@/contexts/WishlistContext";
+import { AccountDropdown } from "./AccountDropdown";
 
 export function Header() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [wishlistCount] = useState(0); // TODO: Connect to wishlist state management
+    const { itemCount: wishlistCount } = useWishlist();
 
     return (
         <>
@@ -97,16 +99,8 @@ export function Header() {
                                 </svg>
                             </button>
 
-                            {/* User Icon */}
-                            <Link 
-                                href="/auth/login" 
-                                className="hidden text-gray-700 hover:text-[#FF6B6B] sm:block" 
-                                aria-label="Account"
-                            >
-                                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
-                            </Link>
+                            {/* Account Dropdown */}
+                            <AccountDropdown />
 
                             {/* Wishlist Icon with Badge */}
                             <Link 
