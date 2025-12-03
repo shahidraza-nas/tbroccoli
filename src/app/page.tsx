@@ -10,19 +10,125 @@ export default function Home() {
       {/* Main Hero Slider */}
       <HeroSlider />
 
-      {/* Category Cards */}
-      <CategoryCards />
-
-      {/* Featured Products */}
-      <section className="bg-white py-16">
+      {/* Shop By Category - Modern Grid */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-3xl font-bold text-black">Trending Now</h2>
-            <Link href="/shop" className="text-sm font-medium text-gray-600 hover:text-black">
-              View All →
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold text-black sm:text-4xl lg:text-5xl">Shop By Category</h2>
+            <p className="text-base text-gray-600 sm:text-lg">Discover your style across our collections</p>
+          </div>
+          
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-4">
+            {/* Large Featured Category */}
+            <Link href="/shop?category=womens" className="group relative col-span-full overflow-hidden rounded-2xl md:col-span-2 md:row-span-2">
+              <div className="relative h-[300px] sm:h-[400px] md:h-full">
+                <img
+                  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80"
+                  alt="Women's Collection"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6 sm:p-8">
+                  <span className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white backdrop-blur-sm">Featured</span>
+                  <h3 className="mb-2 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Women's</h3>
+                  <p className="mb-4 text-sm text-white/90 sm:text-base">Elegant & Sophisticated</p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
+                    Explore Collection
+                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </Link>
+
+            {/* Men's Category */}
+            <Link href="/shop?category=mens" className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[180px] sm:h-[200px]">
+                <img
+                  src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=400&q=80"
+                  alt="Men's Collection"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                  <h3 className="mb-1 text-xl font-bold text-white sm:text-2xl">Men's</h3>
+                  <p className="text-xs text-white/90 sm:text-sm">Sharp & Modern</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Accessories Category */}
+            <Link href="/shop?category=accessories" className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[180px] sm:h-[200px]">
+                <img
+                  src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=400&q=80"
+                  alt="Accessories"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                  <h3 className="mb-1 text-xl font-bold text-white sm:text-2xl">Accessories</h3>
+                  <p className="text-xs text-white/90 sm:text-sm">Complete Your Look</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Kids Category */}
+            <Link href="/shop?category=kids" className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[180px] sm:h-[200px]">
+                <img
+                  src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=400&q=80"
+                  alt="Kids Collection"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                  <h3 className="mb-1 text-xl font-bold text-white sm:text-2xl">Kids</h3>
+                  <p className="text-xs text-white/90 sm:text-sm">Playful & Comfy</p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Sports Category */}
+            <Link href="/shop?category=sports" className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[180px] sm:h-[200px]">
+                <img
+                  src="https://images.unsplash.com/photo-1517438476312-10d79c077509?w=400&q=80"
+                  alt="Sports Collection"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 sm:p-6">
+                  <h3 className="mb-1 text-xl font-bold text-white sm:text-2xl">Sports</h3>
+                  <p className="text-xs text-white/90 sm:text-sm">Active & Dynamic</p>
+                </div>
+              </div>
             </Link>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        </div>
+      </section>
+
+      {/* Trending Products - Carousel Style */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <h2 className="mb-2 text-3xl font-bold text-black sm:text-4xl">Trending Now</h2>
+              <p className="text-sm text-gray-600 sm:text-base">Popular items this season</p>
+            </div>
+            <Link 
+              href="/shop" 
+              className="group flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-[#FF6B6B]"
+            >
+              View All Products
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+          
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <ShopProductCard
               id="1"
               name="Chenille Sweater"
@@ -52,6 +158,80 @@ export default function Home() {
               image="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80"
               colors={["#FFD700", "#2C2C2C", "#87CEEB"]}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Dual Banner Promotion */}
+      <section className="bg-white py-8 sm:py-12">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Winter Sale Banner */}
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
+              <div className="relative flex h-[350px] items-center sm:h-[400px] lg:h-[450px]">
+                <div className="relative z-10 w-full p-8 sm:w-1/2 sm:p-10 lg:p-12">
+                  <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">Winter Sale</span>
+                  <h3 className="mb-3 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                    Up to<br />
+                    <span className="text-[#FF6B6B]">50% Off</span>
+                  </h3>
+                  <p className="mb-6 text-sm text-gray-700 sm:text-base">Cozy essentials for cold days</p>
+                  <Link 
+                    href="/shop?sale=winter" 
+                    className="inline-block bg-black px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-gray-800 hover:shadow-xl"
+                  >
+                    Shop Winter
+                  </Link>
+                </div>
+                <div className="absolute right-0 top-0 h-full w-1/2 sm:w-1/2">
+                  <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80"
+                    alt="Winter Collection"
+                    className="h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* New Arrivals Banner */}
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 via-orange-50 to-rose-100">
+              <div className="relative flex h-[350px] items-center sm:h-[400px] lg:h-[450px]">
+                <div className="relative z-10 w-full p-8 sm:w-1/2 sm:p-10 lg:p-12">
+                  <span className="mb-3 inline-block rounded-full bg-black px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white">New In</span>
+                  <h3 className="mb-3 text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+                    Spring<br />
+                    Essentials
+                  </h3>
+                  <p className="mb-6 text-sm text-gray-700 sm:text-base">Fresh styles for the season</p>
+                  <Link 
+                    href="/shop?collection=new" 
+                    className="inline-block bg-black px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-gray-800 hover:shadow-xl"
+                  >
+                    Discover Now
+                  </Link>
+                </div>
+                <div className="absolute right-0 top-0 h-full w-1/2 sm:w-1/2">
+                  <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"
+                    alt="Spring Collection"
+                    className="h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Collections Grid */}
+      <section className="bg-gray-50 py-16 sm:py-20">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 text-3xl font-bold text-black sm:text-4xl">Featured Collections</h2>
+            <p className="text-sm text-gray-600 sm:text-base">Curated selections just for you</p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <ShopProductCard
               id="5"
               name="Elessi Knit"
@@ -83,51 +263,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Split Banner Section */}
-      <section className="bg-white py-12">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="relative h-[400px] overflow-hidden bg-[#F8E5D5]">
-              <div className="absolute left-8 top-1/2 z-10 -translate-y-1/2">
-                <p className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-600">Winter Collection</p>
-                <h3 className="mb-4 text-4xl font-bold text-black">Up to 50% Off</h3>
-                <Link href="/shop" className="inline-block border-2 border-black px-8 py-3 text-sm font-bold uppercase text-black transition-colors hover:bg-black hover:text-white">
+      {/* Flash Sale Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#FF6B6B] via-[#FF8E53] to-[#FE6B8B] py-16 sm:py-20">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')]"></div>
+        </div>
+        
+        <div className="container relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+            <div className="text-center lg:text-left">
+              <div className="mb-4 inline-block rounded-full bg-white/20 px-5 py-2 text-sm font-bold uppercase tracking-widest text-white backdrop-blur-sm">
+                ⚡ Limited Time Offer
+              </div>
+              <h2 className="mb-4 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                Flash Sale<br />
+                Up to <span className="text-yellow-300">70% Off</span>
+              </h2>
+              <p className="mb-8 text-base text-white/90 sm:text-lg">Don't miss out on incredible savings across all categories</p>
+              <div className="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <Link 
+                  href="/shop?sale=flash" 
+                  className="inline-block bg-black px-10 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-gray-900 hover:shadow-2xl"
+                >
                   Shop Now
                 </Link>
-              </div>
-              <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80"
-                alt="Winter Collection"
-                className="absolute right-0 h-full w-2/3 object-cover"
-              />
-            </div>
-            <div className="relative h-[400px] overflow-hidden bg-[#E8F4F8]">
-              <div className="absolute left-8 top-1/2 z-10 -translate-y-1/2">
-                <p className="mb-2 text-sm font-medium uppercase tracking-wide text-gray-600">New Arrivals</p>
-                <h3 className="mb-4 text-4xl font-bold text-black">Spring Essentials</h3>
-                <Link href="/shop" className="inline-block border-2 border-black px-8 py-3 text-sm font-bold uppercase text-black transition-colors hover:bg-black hover:text-white">
-                  Discover
+                <Link 
+                  href="/shop" 
+                  className="inline-block border-2 border-white px-10 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#FF6B6B]"
+                >
+                  Browse All
                 </Link>
               </div>
-              <img
-                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80"
-                alt="Spring Collection"
-                className="absolute right-0 h-full w-2/3 object-cover"
-              />
+            </div>
+
+            {/* Countdown Timer */}
+            <div className="flex gap-4">
+              {[
+                { value: "12", label: "Hours" },
+                { value: "34", label: "Minutes" },
+                { value: "56", label: "Seconds" },
+              ].map((time, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="mb-2 flex h-16 w-16 items-center justify-center rounded-xl bg-white/20 text-3xl font-bold text-white backdrop-blur-sm sm:h-20 sm:w-20 sm:text-4xl">
+                    {time.value}
+                  </div>
+                  <span className="text-xs font-medium uppercase tracking-wider text-white/80 sm:text-sm">{time.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* Best Sellers */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-3xl font-bold text-black">Best Sellers</h2>
-            <Link href="/shop" className="text-sm font-medium text-gray-600 hover:text-black">
-              View All →
+          <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <h2 className="mb-2 text-3xl font-bold text-black sm:text-4xl">Customer Favorites</h2>
+              <p className="text-sm text-gray-600 sm:text-base">Top picks loved by our community</p>
+            </div>
+            <Link 
+              href="/shop?sort=bestseller" 
+              className="group flex items-center gap-2 text-sm font-semibold text-gray-900 transition-colors hover:text-[#FF6B6B]"
+            >
+              View All Bestsellers
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
+          
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             <ShopProductCard
               id="9"
@@ -169,156 +375,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Large Promotional Banner */}
-      <section className="relative h-[500px] bg-gradient-to-r from-pink-50 to-blue-50">
-        <div className="container relative mx-auto h-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-full items-center">
-            <div className="max-w-lg">
-              <p className="mb-3 text-sm font-medium uppercase tracking-wide text-gray-600">Limited Time Offer</p>
-              <h2 className="mb-4 text-5xl font-bold text-black">Sale Up To<br />70% Off</h2>
-              <p className="mb-6 text-lg text-gray-600">On selected items. Don't miss out!</p>
-              <Link href="/shop" className="inline-block bg-[#FF6B6B] px-10 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-[#FF5252]">
-                Shop Sale
-              </Link>
-            </div>
-            <div className="absolute right-0 top-0 h-full w-1/2">
-              <img
-                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1000&q=80"
-                alt="Sale"
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* New Arrivals */}
-      <section className="bg-white py-16">
+      {/* Editorial Style - Lifestyle Inspiration */}
+      <section className="bg-black py-16 text-white sm:py-20 lg:py-24">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-3xl font-bold text-black">New Arrivals</h2>
-            <Link href="/shop" className="text-sm font-medium text-gray-600 hover:text-black">
-              View All →
-            </Link>
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-3xl font-bold sm:text-4xl lg:text-5xl">Style Inspiration</h2>
+            <p className="text-base text-gray-400 sm:text-lg">Discover how to wear this season's must-haves</p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            <ShopProductCard
-              id="14"
-              name="Elessi Young T-Shirt"
-              price={32.00}
-              image="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&q=80"
-              badge="NEW"
-              colors={["#FFB6C1", "#8B7D82"]}
-            />
-            <ShopProductCard
-              id="15"
-              name="Casis Holder"
-              price={48.00}
-              image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=80"
-              badge="NEW"
-              colors={["#8B9467"]}
-            />
-            <ShopProductCard
-              id="16"
-              name="Flowers Mini Dress"
-              price={23.00}
-              image="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&q=80"
-              badge="NEW"
-            />
-            <ShopProductCard
-              id="17"
-              name="Gathered Sleeve Blouse"
-              price={65.00}
-              originalPrice={80.00}
-              image="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=400&q=80"
-            />
-          </div>
-        </div>
-      </section>
 
-      {/* Red Banner */}
-      <section className="bg-[#FF6B6B] py-3 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-white">
-          UP TO 70% OFF THE ENTIRE STORE - MADE WITH LOVE BY TBROCCOLI
-        </p>
-      </section>
-
-      {/* Product Lists: Top Rated, Best Selling, On Sale */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 md:grid-cols-3">
-            {/* Top Rated */}
-            <div>
-              <h3 className="mb-6 text-xl font-bold text-black">Top Rated</h3>
-              <div className="space-y-4">
-                {[
-                  { name: "Elessi Knit", price: 96.00, image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=200&q=80" },
-                  { name: "Hoodie For Men", price: 88.00, image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=200&q=80" },
-                  { name: "Gray T-shirt", price: 14.00, originalPrice: 16.00, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&q=80" },
-                ].map((product, index) => (
-                  <div key={index} className="flex gap-4">
-                    <img src={product.image} alt={product.name} className="h-20 w-20 object-cover" />
-                    <div>
-                      <h4 className="text-sm font-medium text-black">{product.name}</h4>
-                      <div className="mt-1 flex gap-2">
-                        {product.originalPrice && (
-                          <span className="text-sm text-gray-400 line-through">${product.originalPrice.toFixed(2)}</span>
-                        )}
-                        <span className="text-sm font-semibold text-black">${product.price.toFixed(2)}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+          <div className="grid gap-6 lg:grid-cols-3">
+            {/* Lifestyle Card 1 */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[400px] sm:h-[500px]">
+                <img
+                  src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80"
+                  alt="Street Style"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-wider text-gray-300">Street Style</span>
+                  <h3 className="mb-2 text-2xl font-bold">Urban Comfort</h3>
+                  <Link href="/shop" className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#FF6B6B]">
+                    Shop the Look
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
 
-            {/* Best Selling */}
-            <div>
-              <h3 className="mb-6 text-xl font-bold text-black">Best Selling</h3>
-              <div className="space-y-4">
-                {[
-                  { name: "Gray T-shirt", price: 14.00, originalPrice: 16.00, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&q=80" },
-                  { name: "Classic Wool Sweater", price: 36.00, image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=200&q=80" },
-                  { name: "Short Sleeve Dress", price: 24.00, image: "https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=200&q=80" },
-                ].map((product, index) => (
-                  <div key={index} className="flex gap-4">
-                    <img src={product.image} alt={product.name} className="h-20 w-20 object-cover" />
-                    <div>
-                      <h4 className="text-sm font-medium text-black">{product.name}</h4>
-                      <div className="mt-1 flex gap-2">
-                        {product.originalPrice && (
-                          <span className="text-sm text-gray-400 line-through">${product.originalPrice.toFixed(2)}</span>
-                        )}
-                        <span className="text-sm font-semibold text-black">${product.price.toFixed(2)}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+            {/* Lifestyle Card 2 */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[400px] sm:h-[500px]">
+                <img
+                  src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80"
+                  alt="Minimalist Fashion"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-wider text-gray-300">Minimalist</span>
+                  <h3 className="mb-2 text-2xl font-bold">Less is More</h3>
+                  <Link href="/shop" className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#FF6B6B]">
+                    Shop the Look
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
 
-            {/* On Sale */}
-            <div>
-              <h3 className="mb-6 text-xl font-bold text-black">On Sale</h3>
-              <div className="space-y-4">
-                {[
-                  { name: "Mint Long Sleeve", price: 19.00, originalPrice: 21.00, image: "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=200&q=80" },
-                  { name: "Puff Sleeve Shirt", price: 65.00, originalPrice: 80.00, image: "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=200&q=80" },
-                  { name: "Gray T-shirt", price: 14.00, originalPrice: 16.00, image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=200&q=80" },
-                ].map((product, index) => (
-                  <div key={index} className="flex gap-4">
-                    <img src={product.image} alt={product.name} className="h-20 w-20 object-cover" />
-                    <div>
-                      <h4 className="text-sm font-medium text-black">{product.name}</h4>
-                      <div className="mt-1 flex gap-2">
-                        {product.originalPrice && (
-                          <span className="text-sm text-gray-400 line-through">${product.originalPrice.toFixed(2)}</span>
-                        )}
-                        <span className="text-sm font-semibold text-black">${product.price.toFixed(2)}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+            {/* Lifestyle Card 3 */}
+            <div className="group relative overflow-hidden rounded-2xl">
+              <div className="relative h-[400px] sm:h-[500px]">
+                <img
+                  src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80"
+                  alt="Classic Elegance"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-wider text-gray-300">Classic</span>
+                  <h3 className="mb-2 text-2xl font-bold">Timeless Pieces</h3>
+                  <Link href="/shop" className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-[#FF6B6B]">
+                    Shop the Look
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -326,15 +454,62 @@ export default function Home() {
       </section>
 
       {/* Brand Logos Section */}
-      <section className="border-t border-gray-100 bg-white py-12">
+      <section className="border-t border-gray-100 bg-white py-16">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-12 grayscale opacity-60">
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND1" alt="Brand 1" className="h-10" />
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND2" alt="Brand 2" className="h-10" />
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND3" alt="Brand 3" className="h-10" />
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND4" alt="Brand 4" className="h-10" />
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND5" alt="Brand 5" className="h-10" />
-            <img src="https://via.placeholder.com/120x40/cccccc/666666?text=BRAND6" alt="Brand 6" className="h-10" />
+          <div className="grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-3 lg:grid-cols-6">
+            {/* Nike */}
+            <svg className="h-12 w-auto fill-gray-400 transition-colors hover:fill-gray-900" viewBox="0 0 1000 356" xmlns="http://www.w3.org/2000/svg">
+              <path d="M245.8 212.6l-38.1 85.7s-111.3-69.2-211.9-111.3c-25.7-10.7-34.4 6.5-22 20.6C7.4 250.8 140.4 348 140.4 348l118.9-267.1c8-17.8 0-27.4-16.3-21.8L0 146.4l245.8 66.2z"/>
+            </svg>
+
+            {/* Adidas */}
+            <svg className="h-8 w-auto fill-gray-400 transition-colors hover:fill-gray-900" viewBox="0 0 2560 1024" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1024 0l-256 512h512L1024 0zm-384 768l-128 256h384l128-256H640zm640 0l-128 256h384l128-256h-384zm-512-256L640 768h384l128-256H768zm512 0l-128 256h384l128-256h-384z"/>
+            </svg>
+
+            {/* Zara */}
+            <div className="font-serif text-4xl font-bold tracking-wider text-gray-400 transition-colors hover:text-gray-900">ZARA</div>
+
+            {/* H&M */}
+            <svg className="h-10 w-auto fill-gray-400 transition-colors hover:fill-gray-900" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32zm-80 320h-48V192h48v80h64v-80h48v160h-48v-64h-64v64zm160-96c0 26.5-21.5 48-48 48h-48v-96h48c26.5 0 48 21.5 48 48z"/>
+            </svg>
+
+            {/* Gucci */}
+            <div className="font-serif text-3xl font-bold tracking-widest text-gray-400 transition-colors hover:text-gray-900">GUCCI</div>
+
+            {/* Prada */}
+            <div className="font-serif text-3xl font-light tracking-[0.3em] text-gray-400 transition-colors hover:text-gray-900">PRADA</div>
+
+            {/* Versace */}
+            <svg className="h-12 w-auto fill-gray-400 transition-colors hover:fill-gray-900" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="256" cy="256" r="200" fill="none" stroke="currentColor" strokeWidth="24"/>
+              <path d="M256 150c-30 0-55 25-55 55s25 55 55 55 55-25 55-55-25-55-55-55zm0 180c-50 0-90 40-90 90h180c0-50-40-90-90-90z"/>
+            </svg>
+
+            {/* Calvin Klein */}
+            <div className="text-2xl font-bold tracking-widest text-gray-400 transition-colors hover:text-gray-900">CK</div>
+
+            {/* Levi's */}
+            <div className="font-serif text-3xl font-bold italic text-gray-400 transition-colors hover:text-gray-900">Levi's</div>
+
+            {/* Tommy Hilfiger */}
+            <div className="flex items-center gap-1">
+              <div className="h-8 w-2 bg-red-600"></div>
+              <div className="h-8 w-2 bg-white border border-gray-300"></div>
+              <div className="h-8 w-2 bg-blue-600"></div>
+              <span className="ml-2 text-xl font-bold text-gray-400 transition-colors hover:text-gray-900">TOMMY</span>
+            </div>
+
+            {/* Lacoste */}
+            <svg className="h-10 w-auto fill-gray-400 transition-colors hover:fill-gray-900" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M400 100c-20 0-40 10-50 25-10-15-30-25-50-25-35 0-65 30-65 65v80c0 35 30 65 65 65 20 0 40-10 50-25 10 15 30 25 50 25 35 0 65-30 65-65v-80c0-35-30-65-65-65z"/>
+              <circle cx="280" cy="150" r="8"/>
+              <circle cx="320" cy="140" r="8"/>
+            </svg>
+
+            {/* Ralph Lauren */}
+            <div className="text-xl font-serif tracking-wider text-gray-400 transition-colors hover:text-gray-900">RALPH LAUREN</div>
           </div>
         </div>
       </section>

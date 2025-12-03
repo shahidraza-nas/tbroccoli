@@ -68,7 +68,7 @@ export function ShopHeader({ title, breadcrumb }: { title: string; breadcrumb?: 
     };
 
     return (
-        <section className="relative h-[400px] overflow-hidden bg-gray-100">
+        <section className="relative h-[300px] overflow-hidden bg-gray-100 sm:h-[350px] lg:h-[400px]">
             {/* Slides */}
             <div className="relative h-full">
                 {slides.map((slide, index) => (
@@ -89,17 +89,17 @@ export function ShopHeader({ title, breadcrumb }: { title: string; breadcrumb?: 
                                 alt={slide.title}
                                 className="h-full w-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/30"></div>
                         </div>
 
                         {/* Content */}
                         <div className="container relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-                            <div className="max-w-2xl">
-                                <h2 className="mb-3 text-5xl font-bold text-white">{slide.title}</h2>
-                                <p className="mb-6 text-lg text-white/90">{slide.subtitle}</p>
+                            <div className="max-w-2xl text-center sm:text-left">
+                                <h2 className="mb-2 text-3xl font-bold text-white sm:mb-3 sm:text-4xl lg:text-5xl">{slide.title}</h2>
+                                <p className="mb-4 text-sm text-white/90 sm:mb-6 sm:text-base lg:text-lg">{slide.subtitle}</p>
                                 <Link
                                     href={slide.link}
-                                    className="inline-block bg-white px-8 py-3 text-sm font-bold uppercase tracking-wider text-gray-900 transition-colors hover:bg-gray-100"
+                                    className="inline-block bg-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-gray-900 transition-colors hover:bg-gray-100 sm:px-8 sm:py-3 sm:text-sm"
                                 >
                                     Shop Now
                                 </Link>
@@ -109,36 +109,36 @@ export function ShopHeader({ title, breadcrumb }: { title: string; breadcrumb?: 
                 ))}
             </div>
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Smaller on mobile */}
             <button
                 onClick={goToPrevious}
-                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 transition-all hover:bg-white"
+                className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-1.5 text-gray-900 transition-all hover:bg-white sm:left-4 sm:p-2"
                 aria-label="Previous slide"
             >
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
             <button
                 onClick={goToNext}
-                className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2 text-gray-900 transition-all hover:bg-white"
+                className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-1.5 text-gray-900 transition-all hover:bg-white sm:right-4 sm:p-2"
                 aria-label="Next slide"
             >
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
             </button>
 
-            {/* Dot Indicators */}
-            <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+            {/* Dot Indicators - Smaller on mobile */}
+            <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-6 sm:gap-2">
                 {slides.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`h-2.5 rounded-full transition-all ${
+                        className={`h-2 rounded-full transition-all sm:h-2.5 ${
                             index === currentSlide
-                                ? "w-8 bg-white"
-                                : "w-2.5 bg-white/50 hover:bg-white/75"
+                                ? "w-6 bg-white sm:w-8"
+                                : "w-2 bg-white/50 hover:bg-white/75 sm:w-2.5"
                         }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />
